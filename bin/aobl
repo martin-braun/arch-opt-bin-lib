@@ -1,0 +1,12 @@
+#!/bin/bash
+
+me=`basename "$0"`
+if [[ -z $1 || $1 == "-h" || $1 == "--help" ]]; then
+	echo "Usage: ./$me [ update [ <aobl_package_url> ] ]"
+elif [[ $1 == "update" ]]; then
+	if [[ $2 ]]; then
+		curl -s $2 | sudo tar xvz -C /opt && sudo chmod -R +x /opt/bin
+	else
+		curl -s https://arch.martin-braun.net/download/aobl.tar.gz | sudo tar xvz -C /opt && sudo chmod -R +x /opt/bin
+	fi
+fi

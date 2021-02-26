@@ -1,0 +1,13 @@
+#!/bin/bash
+
+if [[ -z $1 || $1 == "-h" || $1 == "--help" ]]; then
+	echo "Usage: ./new <local_script_file>"
+else
+	sh="./bin/$1"
+	touch $sh
+	echo -e "#!/bin/bash\n">$sh
+	echo -e 'me=`basename "$0"`'>>$sh
+	echo -e "if [[ -z \$1 || \$1 == \"-h\" || \$1 == \"--help\" ]]; then">>$sh
+	echo -e "	echo "\""Usage: ./\$me"\""">>$sh
+	echo -e "fi">>$sh
+fi

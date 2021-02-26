@@ -1,0 +1,11 @@
+#!/bin/bash
+
+if [[ $1 == "-h" || $1 == "--help" ]]; then
+	echo "Usage: ./deploy [ <target_scp_host> ]"
+else
+	scptarget=mb:/var/www/vhosts/martin-braun.net/arch.martin-braun.net/download/aobl.tar.gz
+	if [[ $1 ]]; then
+		scptarget=$1
+	fi
+	tar -czvf aobl.tar.gz ./bin && scp ./aobl.tar.gz $scptarget
+fi
