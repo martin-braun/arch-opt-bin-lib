@@ -16,7 +16,7 @@ Some useful bash scripts that are being installed to `/opt/bin` in your arch dis
 
 ### Deploy
 
-- `./deply YOUR_SCP_TARGET_HOST`
+- `./deploy YOUR_SCP_TARGET_HOST`
 
 ## Install
 
