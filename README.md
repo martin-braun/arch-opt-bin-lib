@@ -4,9 +4,9 @@ Some useful bash scripts that are being installed to `/opt/bin` in your arch dis
 
 ## Included scripts
 
-- [.bashrc](./bin/.bashrc): Useful shell extensions and requirements for OBL
-- [aobl](./bin/aobl): Manager for this bash scrips
-- [pac](./bin/pac): Friendly pacman wrapper
+- [.bashrc](./src/.bashrc): Useful shell extensions and requirements for OBL
+- [aobl](./src/aobl): Manager for this bash scrips
+- [pac](./src/pac): Friendly pacman wrapper
 
 ## Develop
 
