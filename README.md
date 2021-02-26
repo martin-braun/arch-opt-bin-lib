@@ -10,7 +10,7 @@ Some useful bash scripts that are being installed to `/opt/bin` in your arch dis
 
 ## Develop
 
-### Add new scriptÍ
+### Add new script
 
 - `./new scriptname`
 
