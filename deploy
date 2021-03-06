@@ -7,5 +7,5 @@ else
 	if [[ $1 ]]; then
 		scptarget=$1
 	fi
-	tar -czvf aobl.tar.gz ./src && scp ./aobl.tar.gz $scptarget
+	tar -czvf aobl.tar.gz ./bin && scp ./aobl.tar.gz $scptarget
 fi
