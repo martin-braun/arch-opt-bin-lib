@@ -8,7 +8,7 @@ Some useful bash scripts that are being installed to `/opt/bin` in your arch dis
 
 - [.bashrc](./src/.bashrc): Useful shell extensions and requirements for OBL
 - [aobl](./src/aobl): Manager for this bash scrips
-- [pac](./src/pac): Friendly pacman wrapper
+- [pkg](./src/pkg): Simplified pacman/yay wrapper
 
 ### Root scripts
 
