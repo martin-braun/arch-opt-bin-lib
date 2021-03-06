@@ -4,9 +4,17 @@ Some useful bash scripts that are being installed to `/opt/bin` in your arch dis
 
 ## Included scripts
 
+### User scripts
+
 - [.bashrc](./src/.bashrc): Useful shell extensions and requirements for OBL
 - [aobl](./src/aobl): Manager for this bash scrips
 - [pac](./src/pac): Friendly pacman wrapper
+
+### Root scripts
+
+Root scripts require to be logged in via `su` and won't be available, globally, so you need to run `cd /opt/bin` beforehand.
+
+- [su-hostname-setup](./src/su-hostname-setup): Quick way to change the hostname.
 
 ## Develop
 

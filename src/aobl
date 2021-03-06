@@ -2,7 +2,7 @@
 
 me=`basename "$0"`
 if [[ -z $1 || $1 == "-h" || $1 == "--help" ]]; then
-	echo "Usage: ./$me [ update [ <aobl_package_url> ] ]"
+	echo "Usage: $me [ update [ <aobl_package_url> ] ]"
 elif [[ $1 == "update" ]]; then
 	if [[ $2 ]]; then
 		curl -s $2 | sudo tar xvz -C /opt && sudo chmod -R +x /opt/bin

@@ -1,0 +1,13 @@
+#!/bin/bash
+
+me=`basename "$0"`
+if [[ $USER != "root" ]]; then
+	echo  "Please run this command as root (su, not sudo)."
+elif [[ -z $1 || $1 == "-h" || $1 == "--help" ]]; then
+	echo "Usage: $me <new_hostname>"
+else
+	oldhostname=`cat /etc/hostname`
+	hostnamectl set-hostname $1
+	echo $1 > /etc/hostname
+	sed "s/\s$oldhostname/\t$1/g" /etc/hosts > /etc/hosts
+fi
