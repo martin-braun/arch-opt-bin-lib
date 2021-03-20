@@ -15,9 +15,9 @@ else
 	fi
 	if [[ ( $1 == "all" || $1 == "aur" ) ]]; then
 		if [[ ( $2 == "install" || $2 == "i" || $2 == "update" || $2 == "u" ) && $3 ]]; then
-			yay -Sa $3
+			yay -Sa $3 --answerclean y --answerdiff n
 		elif [[ ( $2 == "uninstall" || $2 == "un" ) && $3 ]]; then
-			yay -Rns $3
+			yay -Rns $3 --cleanafter
 		elif [[ $2 == "update" || $2 == "u" ]]; then
 			yay -Sua --answerclean y --answerdiff n --cleanafter
 			yes | yay -c
