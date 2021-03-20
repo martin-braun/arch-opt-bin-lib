@@ -2,29 +2,25 @@
 
 me=`basename "$0"`
 if [[ -z $1 || $1 == "-h" || $1 == "--help" ]]; then
-	echo "Usage: $me [ [ add | yadd | del | ydel ] <package-name> | [ upd | yupd ] ]"
-elif [[ $1 == "add" && $2 ]]; then
-	sudo pacman -S $2
-elif [[ $1 == "yadd" && $2 ]]; then
-	if [[ `which yay` == "/usr/bin/yay" ]]; then
-		yay -S $2
-	else
-		echo "Yay not found!"
+	echo "Usage: $me [ all | acr | aur ] [ install | i | uninstall | un | update | u ] [ <package-name> ]"
+else
+	if [[ $1 == "all" || $1 == "acr" ]]; then
+		if [[ ( $2 == "install" || $2 == "i" || $2 == "update" || $2 == "u" ) && $3 ]]; then
+			sudo pacman -S $3
+		elif [[ ( $2 == "uninstall" || $2 == "un" ) && $3 ]]; then
+			sudo pacman -Rns $3
+		elif [[ $2 == "update" || $2 == "u" ]]; then
+			sudo pacman -Syu --noconfirm
+		fi
 	fi
-elif [[ $1 == "del" && $2 ]]; then
-		sudo pacman -Rns $2
-elif [[ $1 == "ydel" && $2 ]]; then
-	if [[ `which yay` == "/usr/bin/yay" ]]; then
-		yay -Rns $2
-	else
-		echo "Yay not found!"
-	fi
-elif [[ $1 == "upd" ]]; then
-		sudo pacman -Syu
-elif [[ $1 == "yupd" ]]; then
-	if [[ `which yay` == "/usr/bin/yay" ]]; then
-		yay -Syu
-	else
-		echo "Yay not found!"
+	if [[ ( $1 == "all" || $1 == "aur" ) ]]; then
+		if [[ ( $2 == "install" || $2 == "i" || $2 == "update" || $2 == "u" ) && $3 ]]; then
+			yay -Sa $3
+		elif [[ ( $2 == "uninstall" || $2 == "un" ) && $3 ]]; then
+			yay -Rns $3
+		elif [[ $2 == "update" || $2 == "u" ]]; then
+			yay -Sua --answerclean y --answerdiff n --cleanafter
+			yes | yay -c
+		fi
 	fi
 fi
