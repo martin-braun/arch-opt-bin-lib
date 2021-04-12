@@ -19,7 +19,7 @@ else
 		elif [[ ( $2 == "uninstall" || $2 == "un" ) && $3 ]]; then
 			yay -Rns $3 --cleanafter
 		elif [[ $2 == "update" || $2 == "u" ]]; then
-			yay -Sua --answerclean y --answerdiff n --cleanafter
+			yay -Sua --answerclean y --answerdiff n --cleanafter --noconfirm
 			yes | yay -c
 		fi
 	fi
