@@ -1,0 +1,10 @@
+#!/bin/bash
+
+me=`basename "$0"`
+if [[ -z $1 || $1 == "-h" || $1 == "--help" ]]; then
+	echo "Usage: $me [ run | install ]"
+elif [[ $1 == "run" ]]; then
+	startxfce4
+elif [[ $1 == "install" ]]; then
+	sudo pacman -S xorg xfce4
+fi
